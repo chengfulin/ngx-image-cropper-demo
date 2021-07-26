@@ -6,3 +6,6 @@ Including these features:
 * Preview cropped result with original size, and show the size with position of the cropper (top-left and bottom-right points)
 * Download with blob type (with [file-saver](https://www.npmjs.com/package/file-saver))
 
+## Sample Image
+You can use image in the "samples" folder.  
+It's 8333px by 8333px, containing 20*20 squares image. Each size is 8333/20 px(416.65).
