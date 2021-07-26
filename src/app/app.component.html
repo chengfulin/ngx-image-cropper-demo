@@ -29,14 +29,17 @@
           Cropper Pos:&nbsp;
           <span>({{ imgPos.x1 }}, {{ imgPos.y1 }}) => ({{ imgPos.x2 }}, {{ imgPos.y2 }})</span>
         </div>
-        <button *ngIf="croppedImage" (click)="download()">Download</button>
+        <button class="btn btn-primary" *ngIf="croppedImage" (click)="download()">Download</button>
       </div>
     </header>
     <div class="preview result-preview">
-      <img *ngIf="croppedImage" [src]="croppedImage" (click)="onClickPreview()">
+      <div *ngIf="croppedImage" class="img-item" (click)="onClickPreview()">
+        <img [src]="croppedImage">
+      </div>
     </div>
   </div>
 </div>
+<hr>
 <a id="preview-original-anchor"></a>
 <div class="preview-original" *ngIf="croppedImage && showOriginalSize">
   <img [src]="croppedImage" alt="Original size image">

@@ -16,6 +16,8 @@ export class AppComponent {
   fileChangeEvent!: Event;
   maxWidth = 2083.25;
   maxHeight = 2083.25;
+  minWidth = 1;
+  minHeight = 1;
   showOriginalSize = false;
 
   onFileChange(ev: Event) {
