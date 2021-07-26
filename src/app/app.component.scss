@@ -1,0 +1,46 @@
+:host {
+  font-size: 14px;
+  line-height: 1.57;
+
+
+.header {
+  padding: 1em .5em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.content {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1em;
+
+    .container {
+      flex-grow: 1;
+
+      header {
+        margin-bottom: 1em;
+
+        h3 {
+          font-size: 20px;
+          line-height: 1.5;
+          margin: 0 0 .5em 0;
+        }
+      }
+    }
+
+    .preview {
+      &:not(:last-child) {
+        margin-right: 1em;
+      }
+      &.cropper-preview {
+        width: 600px;
+      }
+      &.result-preview {
+        img {
+          width: 100px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

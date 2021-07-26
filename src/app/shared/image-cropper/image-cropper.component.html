@@ -1,36 +1,12 @@
-<div class="header">
-  <input type="file" (change)="onFileChange($event)">
-  <div>
-    <div *ngIf="croppedWidth && croppedHeight">
-      Cropped Size:&nbsp;
-      <span>W: {{croppedWidth}}</span>
-      <span>H: {{croppedHeight}}</span>
-    </div>
-    <div *ngIf="imgPos">
-      Cropper Pos:&nbsp;
-      <span>({{ imgPos.x1 }}, {{ imgPos.y1 }}) => ({{ imgPos.x2 }}, {{ imgPos.y2 }})</span>
-    </div>
-    <button *ngIf="croppedImage" (click)="download()">Download</button>
-  </div>
-</div>
-<div class="content">
-  <h3>Cropper</h3>
-  <em>Maxmium Size: {{maxWidth}}px &times; {{maxHeight}}px</em>
-  <div class="preview cropper-preview" *ngIf="fileChangeEvent">
-    <image-cropper
-      [imageChangedEvent]="fileChangeEvent"
-      [maintainAspectRatio]="false"
-      [cropperMaxWidth]="maxWidth"
-      [cropperMaxHeight]="maxHeight"
-      [cropperMinWidth]="minWidth"
-      [cropperMinHeight]="minHeight"
-      [format]="'png'"
-      [imageQuality]="100"
-      (imageCropped)="onCropped($event)"></image-cropper>
-  <!-- [imageQuality] only for jpeg / webp -->
-  </div>
-  <h3>Cropped Image (original size)</h3>
-  <div class="preview result-preview">
-    <img *ngIf="croppedImage" [src]="croppedImage" #croppedImgElem>
-  </div>
-</div>
+<image-cropper
+  *ngIf="fileChangeEvent"
+  [imageChangedEvent]="fileChangeEvent"
+  [maintainAspectRatio]="false"
+  [cropperMaxWidth]="maxWidth"
+  [cropperMaxHeight]="maxHeight"
+  [cropperMinWidth]="minWidth"
+  [cropperMinHeight]="minHeight"
+  [format]="'png'"
+  [imageQuality]="100"
+  (imageCropped)="onCropped($event)"
+  (loadImageFailed)="onLoadFailed()"></image-cropper>
