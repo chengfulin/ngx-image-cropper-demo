@@ -1,0 +1,19 @@
+.header {
+  padding: 1em .5em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .preview {
+    &:not(:last-child) {
+      margin-right: 1em;
+    }
+    &.cropper-preview {
+      width: 600px;
+    }
+  }
+}
