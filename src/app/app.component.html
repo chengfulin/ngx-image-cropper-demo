@@ -37,6 +37,10 @@
         <div *ngIf="croppedImage" class="img-item" (click)="onClickPreview()">
           <img [src]="croppedImage">
         </div>
+        <ng-container *ngIf="croppedImage">
+          <h4>Base64 Result</h4>
+          <textarea rows="10" cols="30" class="base64-result" readonly (click)="selectElem()" #base64Result>{{croppedImage}}</textarea>
+        </ng-container>
       </div>
     </div>
   </div>

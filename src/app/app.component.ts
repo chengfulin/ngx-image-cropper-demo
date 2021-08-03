@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { saveAs } from 'file-saver';
 import { CropperPosition, ImageCroppedEvent } from 'ngx-image-cropper';
 
@@ -8,6 +8,7 @@ import { CropperPosition, ImageCroppedEvent } from 'ngx-image-cropper';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  @ViewChild('base64Result') base64Result!: ElementRef;
   title = 'ngx-image-cropper-demo';
   croppedImage!: string;
   croppedWidth!: number;
@@ -49,5 +50,11 @@ export class AppComponent {
 
   onLoadImageFailed() {
     alert('Only png, gif and jpg are supported.');
+  }
+
+  selectElem() {
+    if (this.base64Result) {
+      this.base64Result.nativeElement.select();
+    }
   }
 }
