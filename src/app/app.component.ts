@@ -20,6 +20,7 @@ export class AppComponent {
   minWidth = 1;
   minHeight = 1;
   showOriginalSize = false;
+  croppedImgFormat: 'png'|'jpeg' = 'jpeg';
 
   onFileChange(ev: Event) {
     this.fileChangeEvent = ev;
@@ -39,7 +40,7 @@ export class AppComponent {
     fetch(`${this.croppedImage}`)
       .then(res => res.blob())
       .then(blob => {
-        saveAs(blob, 'download.png');
+        saveAs(blob, `download.${this.croppedImgFormat === 'png' ? 'png' : 'jpg'}`);
       });
   }
 

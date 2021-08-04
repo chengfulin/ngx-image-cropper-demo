@@ -12,6 +12,7 @@ export class ImageCropperComponent implements OnInit {
   @Input() minWidth = 100;
   @Input() minHeight = 100;
   @Input() fileChangeEvent!: Event;
+  @Input() outputFormat: 'png'|'jpeg' = 'png';
   @Output() cropped = new EventEmitter<ImageCroppedEvent>();
   @Output() loadFailed = new EventEmitter<void>();
 

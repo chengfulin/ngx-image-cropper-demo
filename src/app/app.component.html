@@ -13,6 +13,7 @@
           [fileChangeEvent]="fileChangeEvent"
           [maxWidth]="maxWidth"
           [maxHeight]="maxHeight"
+          [outputFormat]="croppedImgFormat"
           (cropped)="onCropped($event)"
           (loadFailed)="onLoadImageFailed()"></app-image-cropper>
       </div>
